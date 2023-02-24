@@ -9,6 +9,8 @@ Baby Blue: #2699FB
 Wine: #590242
 */
 
+
+
 /* Global Styles */
 html {
     box-sizing: border-box;
@@ -16,6 +18,9 @@ html {
     margin: 0 auto;
     background-color: #020659;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body{
+    max-width: 834px;
 }
 *,
 *:before,
@@ -32,16 +37,21 @@ html {
 h1 {
     font-size: 1.25em;
 }
-h2, h3 {
+h2{
     font-size: 1em;
+    text-transform: uppercase;
+}
+h3 {
+    font-size: 1em;
+    color: #590242;
 }
 p, dl, dd {
     font-size: 1em;
 }
 
-///////////////////////////////////////////////////
+
 /* Menu Code for Mobile First Style */
-///////////////////////////////////////////////////
+
 ul {
     overflow: hidden;
     max-height: 0;
@@ -101,27 +111,31 @@ input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps)
         overflow: visible;
         position: absolute;
         top: 0;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     }
     label span, input {
         display: none;
     }
+    #trending{
+        /* display: grid;
+        grid-template-columns: repeat(4, 1fr); */
+    }
 }
-////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////
+
 
 /* Header */
-
+nav{
+    background-color: #030ABC;
+}
 nav ul{
-    display: inline-block;
     list-style-type: none;
     text-align: center;
     color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 li{
-    display: inline-block;
     text-transform: uppercase;
+    padding-top: 
 }
 nav a{
     color: #FFFFFF;
@@ -133,24 +147,87 @@ nav a:visited{
 .hero{
     background-image: linear-gradient(to right, #030ABC,#000);
     color:#FFFFFF;
+    max-width: 834px;
 }
 
 /* Trending Songs Section */
 #trending{
-    background-color: #FFFFFF;
+    background-color: #FFFFFF; 
+}
+#trending h3{
+    padding: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.scroll{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 45%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-left: 10px;
+    height: 400px;
+
+
+}
+.scroll .card{
+    position: relative;
     color: #590242;
 }
-#trending ::-webkit-scrollbar {
+.card{
+    margin: 10px;
+    width: 311px;
+    background-color: lightgrey;
+}
+dl{
+    position: absolute;
+    top: 315px;
+}
 
+dt{
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+audio{
+    position: absolute;
+    left: 1px;
+    margin-top: 145px;
+
+}
+#trending ::-webkit-scrollbar {
+    height: 15px;
 }
 #trending ::-webkit-scrollbar-track {
-
+    background: #c791b9;
 }
 #trending ::-webkit-scrollbar-thumb {
-
+ background: #590242;
+ border-radius: 6px;;
+}
+.button{
+    background-color: #590242;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 8px;
+    position: relative;
+    margin-left: 625px;
+}
+.button a{
+    color: #ffffff;
+    text-decoration: none;;
+}
+.button::after{
+    color: #FFFFFF;
 }
 #trending ::-webkit-scrollbar-thumb:hover {
-
+    background: #b40986;
 }
 audio::-webkit-media-controls-mute-button {
 
@@ -177,21 +254,25 @@ audio::-webkit-media-controls-enclosure {
 #playlists ::-webkit-scrollbar-thumb:hover, #curated ::-webkit-scrollbar-thumb:hover {
 
 }
-    /* Your Playlists Section */
-    .your-playlists{
-        background-color: #2699FB;
-    }
-    .your-playlists-wrapper{
-        background-color: #0D8DFB;
-    }
-    /* Curated Playlists Section */
-    .curated-playlists{
-        background-color: #020873;
 
-    }
-    .curated-playlists-wrapper{
-        background-color: #020659
-    }
+/* Your Playlists Section */
+#playlists{
+    background-color: #ffffff;
+}
+.your-playlists{
+    background-color: #2699FB;
+}
+.your-playlists-wrapper{
+    background-color: #0D8DFB;
+}
+/* Curated Playlists Section */
+.curated-playlists{
+    background-color: #020873;
+
+}
+.curated-playlists-wrapper{
+    background-color: #020659;
+}
 /* Footer */
 footer{
     text-align: center;
