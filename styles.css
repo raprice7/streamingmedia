@@ -44,6 +44,10 @@ h2{
 h3 {
     font-size: 1em;
     color: #590242;
+    text-transform: uppercase;
+    padding: 15px;
+    font-weight: bold;
+
 }
 p, dl, dd {
     font-size: 1em;
@@ -115,9 +119,53 @@ input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps)
     label span, input {
         display: none;
     }
-    #trending{
-        /* display: grid;
-        grid-template-columns: repeat(4, 1fr); */
+    #playlists{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .your-playlists{
+        display: grid;
+        grid-auto-flow: row;
+        grid-auto-rows: 30%;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    .your-playlists-wrapper{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        text-align: center;
+    }
+    .curated-playlists{
+        display: grid;
+        grid-auto-flow: row;
+        grid-auto-rows: 30%;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    .curated-playlists-wrapper{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 834px){
+    .your-playlists{
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 45%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding-left: 10px;
+        height: 400px;
+    }
+    .curated-playlists{
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 45%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding-left: 10px;
+        height: 400px;
     }
 }
 
@@ -137,6 +185,11 @@ li{
     text-transform: uppercase;
     padding-top: 
 }
+li:first-child{
+    font-weight: bold;
+    text-transform: capitalize;
+    font-size: 1.5em;
+}
 nav a{
     color: #FFFFFF;
     text-decoration: none;
@@ -154,11 +207,6 @@ nav a:visited{
 #trending{
     background-color: #FFFFFF; 
 }
-#trending h3{
-    padding: 20px;
-    font-weight: bold;
-    text-transform: uppercase;
-}
 
 .scroll{
     display: grid;
@@ -168,8 +216,6 @@ nav a:visited{
     overflow-y: hidden;
     padding-left: 10px;
     height: 400px;
-
-
 }
 .scroll .card{
     position: relative;
@@ -218,10 +264,13 @@ audio{
     border-radius: 8px;
     position: relative;
     margin-left: 625px;
+    text-decoration: none;
+}
+.button:hover{
+    background-color: #020659
 }
 .button a{
     color: #ffffff;
-    text-decoration: none;;
 }
 .button::after{
     color: #FFFFFF;
@@ -230,28 +279,49 @@ audio{
     background: #b40986;
 }
 audio::-webkit-media-controls-mute-button {
-
+    opacity: 1;
+    background-color: white;
+    border-radius: 50px;
+    opacity: 1;
 }
 audio::-webkit-media-controls-play-button {
-
+    opacity: 1;
+    background-color: white;
+    border-radius: 50px;
 }
 audio::-webkit-media-controls-enclosure {
-
+    opacity: .8;
+    background-color: lightgray;
 }
 /* Playlists Section */
 #playlists{
-    color: #FFFFFF;
+   color: #ffffff;
 }
-#playlists ::-webkit-scrollbar, #curated ::-webkit-scrollbar {
-
+.button2{
+    background-color: #590242;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 8px;
+    text-decoration: none;
 }
-#playlists ::-webkit-scrollbar-track, #curated ::-webkit-scrollbar-track  {
-
+.button2:hover{
+    background-color: #020659;
 }
-#playlists ::-webkit-scrollbar-thumb, #curated ::-webkit-scrollbar-thumb {
-
+#your-playlists ::-webkit-scrollbar, #curated ::-webkit-scrollbar {
+    width: 10px;
 }
-#playlists ::-webkit-scrollbar-thumb:hover, #curated ::-webkit-scrollbar-thumb:hover {
+#your-playlists ::-webkit-scrollbar-track, #curated ::-webkit-scrollbar-track  {
+    background: #363ed5;
+}
+#your-playlists ::-webkit-scrollbar-thumb, #curated ::-webkit-scrollbar-thumb {
+    background: #020659;
+}
+#your-playlists ::-webkit-scrollbar-thumb:hover, #curated ::-webkit-scrollbar-thumb:hover {
 
 }
 
@@ -259,25 +329,33 @@ audio::-webkit-media-controls-enclosure {
 #playlists{
     background-color: #ffffff;
 }
+
+#playlists span{
+    font-weight: bold;
+}
 .your-playlists{
     background-color: #2699FB;
+    
 }
 .your-playlists-wrapper{
-    background-color: #0D8DFB;
+    background-color: #0f89f5;
+    margin: 20px;
 }
 /* Curated Playlists Section */
 .curated-playlists{
-    background-color: #020873;
-
+    background-color: #030ABC;
 }
 .curated-playlists-wrapper{
-    background-color: #020659;
+    background-color: #020873;
+    margin: 20px;
 }
 /* Footer */
 footer{
     text-align: center;
     background-color: #FFFFFF;
+    padding: 25px;
 }
 footer p {
     font-size: .75em;
+    color: #590242
 }
